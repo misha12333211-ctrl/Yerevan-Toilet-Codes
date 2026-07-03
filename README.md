@@ -33,8 +33,8 @@
 ---
 
 ## 🤝 Как помочь проекту?
-Если вы знаете рабочий код, которого еще нет на сайте:
-1. Зайдите на сайт и отправьте его через форму внизу страницы.
+Если вы знаете рабочий код, которого еще нет на сайте, то
+Зайдите на сайт и отправьте его через форму внизу страницы.
 
 
 # 🚽 Yerevan Codes (Yerevan Toilet Codes) 🇦🇲
@@ -70,4 +70,4 @@ If this project saved your walk around the Pink City, you can support me for ice
 
 ## 🤝 How to Contribute
 If you know a working toilet code that is missing:
-1. Use the submission form at the bottom of the live website.
+Use the submission form at the bottom of the live website.
