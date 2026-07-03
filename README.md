@@ -3,7 +3,7 @@
 
 # 🚽 Yerevan Codes (Yerevan Toilet Codes) 🇦🇲
 
-> **Живой сайт доступен по адресу:** [ВСТАВЬ СЮДА ССЫЛКУ, КОГДА ЗАПУСТИШЬ]
+> **Живой сайт доступен по адресу:** [https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/]
 
 Народный краудсорсинговый веб-сервис, который помогает жителям и туристам Еревана быстро находить коды от дверей туалетов в кафе и фастфудах в центре города. Больше никаких неловких ситуаций и лишних покупок ради чека!
 
@@ -13,7 +13,7 @@
 *   **⚡️ Живой поиск:** Мгновенная фильтрация по названию заведения или улице на чистом JavaScript.
 *   **🎨 Крафтовый дизайн:** Стильный интерфейс в стиле нео-брутализма, полностью адаптированный под мобильные экраны (ведь кодами пользуются прямо на ходу).
 *   **📩 Безбэкендовый сбор данных:** Реализована форма отправки новых кодов пользователями напрямую на email разработчика через сервис `FormSubmit` (без регистрации, баз данных и серверов).
-*   **🔋 100% Free & Open Source:** Проект создан без копейки вложений и хостится бесплатно.
+*   **🔋 100% Бесплатно и С открытым оисходным кодом:** Проект создан без копейки вложений и хостится бесплатно.
 
 ---
 
@@ -39,7 +39,7 @@
 
 # 🚽 Yerevan Codes (Yerevan Toilet Codes) 🇦🇲
 
-> **Live website:** [YOUR_LINK_HERE]
+> **Live website:** [https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/]
 
 A crowdsourced web service designed to help residents and tourists in Yerevan quickly find door codes for toilets in cafes and fast-food chains across the city center. No more awkward situations or unnecessary purchases just for a receipt!
 
