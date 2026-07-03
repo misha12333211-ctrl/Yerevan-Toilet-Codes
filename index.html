@@ -613,35 +613,6 @@
             const button = document.getElementById('submit-btn');
             const successMessage = document.getElementById('form-success');
             
-            // Получаем значения полей и очищаем от лишних пробелов по краям
-            const cafeName = document.getElementById('input-name').value.trim();
-            const address = document.getElementById('input-address').value.trim();
-            const code = document.getElementById('input-code').value.trim();
-
-            // 1. Проверка на слишком короткое название заведения
-            if (cafeName.length < 2) {
-                alert(currentLang === 'ru' ? 'Название заведения слишком короткое!' : 
-                      currentLang === 'en' ? 'Cafe name is too short!' : 'Անվանումը չափազանց կարճ է:');
-                return;
-            }
-
-            // 2. Проверка адреса: ищем хотя бы одну цифру (номер дома/здания)
-            const hasNumber = /\d/.test(address);
-            if (!hasNumber) {
-                alert(currentLang === 'ru' ? 'Пожалуйста, укажите номер дома в адресе, чтобы другие могли найти заведение!' : 
-                      currentLang === 'en' ? 'Please include a building number in the address!' : 'Пожалуйста, укажите номер дома в адресе, чтобы другие могли найти заведение!');
-                return;
-            }
-
-            // 3. Защита от спамеров: проверяем, нет ли в полях ссылок (http, https, www, .com, .ru)
-            const urlPattern = /https?:\/\/[^\s]+|www\.[^\s]+|\.[a-zA-Z]{2,4}/i;
-            if (urlPattern.test(cafeName)  urlPattern.test(address)  urlPattern.test(code)) {
-                alert(currentLang === 'ru' ? 'Ссылки отправлять запрещено!' : 
-                      currentLang === 'en' ? 'Links are not allowed!' : 'Հղումներ ուղարկելն արգելված է:');
-                return;
-            }
-
-            // Если все проверки пройдены — отправляем форму
             button.disabled = true;
             button.innerText = translations[currentLang].sendingBtn;
             successMessage.style.display = 'none';
