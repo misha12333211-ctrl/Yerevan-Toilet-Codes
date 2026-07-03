@@ -302,6 +302,7 @@
             color: #666; 
             font-weight: 500; 
             line-height: 1.5; 
+            white-space: pre-line; /* Чтобы перенос строк \n работал красиво */
         }
     </style>
 </head>
@@ -360,7 +361,9 @@
     </div>
 
     <div class="donate-box" id="donate-text">
-        Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦
+        Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦 
+
+        Конфиденциальность: сайт не собирает личные данные пользователей. Отправляя код, вы передаете только информацию о заведении.
     </div>
 
     <script>
@@ -386,7 +389,7 @@
                 shareDesc: "Нажми на QR-код, чтобы скачать его в PNG, или скопируй ссылку ниже.",
                 shareBtn: "Скопировать ссылку",
                 copiedBtn: "Ссылка скопирована! 👍",
-                donate: "Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦",
+                donate: "Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦 \n\n Конфиденциальность: сайт не собирает личные данные пользователей. Отправляя код, вы передаете только информацию о заведении.",
                 noResults: "Пока кодов от этого места нет 🔍 Попробуй другое!"
             },
             en: {
@@ -407,15 +410,15 @@
                 shareDesc: "Click on the QR code to download it as PNG, or copy the link below.",
                 shareBtn: "Copy Link",
                 copiedBtn: "Link copied! 👍",
-                donate: "This project is built and maintained by a 14-year-old aspiring developer in Yerevan. If this site saved your walk, you can support the author for ice cream via Idram (wallet number coming soon) 🍦",
+                donate: "This project is built and maintained by a 14-year-old aspiring developer in Yerevan. If this site saved your walk, you can support the author for ice cream via Idram (wallet number coming soon) 🍦 \n\n Privacy: this site does not collect personal user data. By submitting a code, you only share cafe information.",
                 noResults: "No codes for this place yet 🔍 Try another!"
             },
             am: {
                 title: "Yerevan <span>Codes</span> 🚽",
-                subtitle: "Քաղաքի կենտրոնում գտնվող զուգարանների աշխատող կոդերի ժողովրդական բազա։ Ստուգված է զբոսնողների կողմից։",
+                subtitle: "Քաղաքի կենտրոնում գտնվող զուգարանների աշխատող կոդերի ժողովրդական բազա։ Ստուգված է զբոսնողների կոնցից։",
                 searchPlaceholder: "Փնտրել ըստ անվանման կամ փողոցի...",
                 formTitle: "Գիտե՞ս կոդը։ Կիսվիր։",
-                formDesc: "Գտե՞լ ես նոր կոդ կամ նկատել ես, որ հինը փոխվել է։ Գրիր այստեղ, գրանցում պետք չէ։ Ես կթարմացնեմ կայքը օրվա ընթացքում։",
+                formDesc: "Գտե՞լ ես նոր կոդ կամ նկատել ես, որ հինը փոխվել է։ Գրիր այստեղ, ցրանցում պետք չէ։ Ես կթարմացնեմ կայքը օրվա ընթացքում։",
                 inputName: "Օրինակ՝ KFC կամ Lumen Coffee",
                 inputAddress: "Օրինակ՝ Ամիրյան փողոց կամ Հյուսիսային պողոտա",
                 inputCode: "Օրինակ՝ 4921# կամ Հարցնել բարմենին",
@@ -428,16 +431,20 @@
                 shareDesc: "Սեղմեք QR կոդի վրա՝ այն PNG ձևաչափով ներբեռնելու համար, կամ պատճենեք հղումը ստորև:",
                 shareBtn: "Պատճենել հղումը",
                 copiedBtn: "Հղումը պատճենված է բուֆերում: 👍",
-                donate: "Նախագիծը ստեղծել և թարմացնում է Երևանում բնակվող 14-ամյա սկսնակ ծրագրավորողը։ Եթե կայքը փրկեց Ձեր զբոսանքը, կարող եք աջակցել հեղինակին պաղպաղակի համար Idram-ի միջոցով (դրամապանակի համարը աջակցության համար շուտով) 🍦",
-                noResults: "Այս վայրի համար դեռ կոդեր չկան 🔍 Փորձեք մեկ ուրիшем"
+                donate: "Նախագիծը ստեղծել և թարմացնում է Երևանում բնակվող 14-ամյա սկսնակ ծրագրավորողը։ Եթե կայքը փրկեց Ձեր զբոսանքը, կարող եք աջակցել հեղինակին պաղպաղակի համար Idram-ի միջոցով (դրամապանակի համարը շուտով) 🍦 \n\n Գաղտնիություն. կայքը չի հավաքում օգտատերերի անձնական տվյալները: Կոդ ուղարկելով՝ դուք միայն կիսվում եք հաստատության մասին տեղեկություններով:",
+                noResults: "Այս վայրի համար դեռ կոդեր չկան 🔍 Փորձեք մեկ ուրիշը"
             }
         };
 
-        // ТВОЯ БАЗА ДАННЫХ
+        // ТВОЯ БАЗА ДАННЫХ (С ПОЛНОЙ МУЛЬТИЯЗЫЧНОСТЬЮ НАЗВАНИЙ И АДРЕСОВ)
         const places = [
             { 
-                name: "KFC (Амирян)", 
-                address: "ул. Амиряна, 1 / Amiryan St, 1 / Ամիրյան փող., 1", 
+                nameRu: "KFC (Амирян)", 
+                nameEn: "KFC (Amiryan)",
+                nameAm: "KFC (Ամիրյան)",
+                addressRu: "ул. Амиряна, 1",
+                addressEn: "1 Amiryan St",
+                addressAm: "Ամիրյան փող., 1",
                 code: "3845#", 
                 dateRu: "Обновлено сегодня",
                 dateEn: "Updated today",
@@ -445,13 +452,17 @@
                 searchKeywords: "kfc кфс амирян amiryan ամիրյան фастфуд fastfood центральный центр площадь"
             },
             { 
-                name: "То самое кафе", 
-                address: "Твоя любимая улица", 
-                code: "9999", 
-                dateRu: "Обновлено вчера",
-                dateEn: "Updated yesterday",
-                dateAm: "Թարմացվել է երեկ",
-                searchKeywords: "кафе кофейня street փողոց cafe"
+                nameRu: "Тонрашхар", 
+                nameEn: "Tonrashhar",
+                nameAm: "Տոնրաշխարհ",
+                addressRu: "пр. Комитаса, 24/6",
+                addressEn: "24/6 Komitas Ave",
+                addressAm: "Կոմիտասի պողոտա, 24/6",
+                code: "Спросить на барной стойке", 
+                dateRu: "Обновлено сегодня",
+                dateEn: "Updated today",
+                dateAm: "Թարմացվել է այսօր",
+                searchKeywords: "тонрашхар tonrashhar komitas комитас еда армянская кухня кафе"
             }
         ];
 
@@ -478,7 +489,6 @@
             document.getElementById('submit-btn').innerText = translations[lang].submitBtn;
             document.getElementById('donate-text').innerText = translations[lang].donate;
             
-            // Новые переводы для блока шаринга
             document.getElementById('share-title').innerText = translations[lang].shareTitle;
             document.getElementById('share-desc').innerText = translations[lang].shareDesc;
             document.getElementById('share-btn').innerText = translations[lang].shareBtn;
@@ -486,12 +496,16 @@
             renderPlaces(getFilteredPlaces());
         }
 
-        // Логика умного мультиязычного поиска
+        // Логика умного мультиязычного поиска (ищет сразу по всем языковым полям названий и адресов)
         function getFilteredPlaces() {
             const text = searchInput.value.toLowerCase().trim();
             return places.filter(place => 
-                place.name.toLowerCase().includes(text) || 
-                place.address.toLowerCase().includes(text) ||
+                (place.nameRu && place.nameRu.toLowerCase().includes(text)) || 
+                (place.nameEn && place.nameEn.toLowerCase().includes(text)) || 
+                (place.nameAm && place.nameAm.toLowerCase().includes(text)) || 
+                place.addressRu.toLowerCase().includes(text) ||
+                place.addressEn.toLowerCase().includes(text) ||
+                place.addressAm.toLowerCase().includes(text) ||
                 (place.searchKeywords && place.searchKeywords.toLowerCase().includes(text))
             );
         }
@@ -508,13 +522,26 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 
+                // Значения по умолчанию (на русском)
+                let currentName = place.nameRu;
+                let currentAddress = place.addressRu;
                 let dateStr = place.dateRu;
-                if(currentLang === 'en') dateStr = place.dateEn;
-                if(currentLang === 'am') dateStr = place.dateAm;
+                
+                // Переключаем в зависимости от выбранного языка
+                if(currentLang === 'en') {
+                    currentName = place.nameEn || place.nameRu; // если английского имени нет, берем русское
+                    currentAddress = place.addressEn;
+                    dateStr = place.dateEn;
+                }
+                if(currentLang === 'am') {
+                    currentName = place.nameAm || place.nameRu; // если армянского имени нет, берем русское
+                    currentAddress = place.addressAm;
+                    dateStr = place.dateAm;
+                }
 
                 card.innerHTML = `
-                    <h3>${place.name}</h3>
-                    <div class="address">📍 ${place.address}</div>
+                    <h3>${currentName}</h3>
+                    <div class="address">📍 ${currentAddress}</div>
                     <div class="code-box">${place.code}</div>
                     <div class="date">⏳ ${dateStr}</div>
                 `;
@@ -522,36 +549,59 @@
             });
         }
 
-        // Функция копирования правильной ссылки в буфер обмена
+        // Улучшенная функция копирования ссылки с резервным способом для локального открытия file://
         function copyLink() {
             const siteUrl = "https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/";
-            navigator.clipboard.writeText(siteUrl).then(() => {
-                const shareBtn = document.getElementById('share-btn');
-                shareBtn.innerText = translations[currentLang].copiedBtn;
-                setTimeout(() => {
-                    shareBtn.innerText = translations[currentLang].shareBtn;
-                }, 2000);
-            });
+            const shareBtn = document.getElementById('share-btn');
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(siteUrl).then(() => {
+                    showCopiedStatus(shareBtn);
+                }).catch(() => {
+                    fallbackCopy(siteUrl, shareBtn);
+                });
+            } else {
+                fallbackCopy(siteUrl, shareBtn);
+            }
         }
 
-        // Функция принудительного скачивания QR-кода в PNG
+        function fallbackCopy(text, button) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showCopiedStatus(button);
+            } catch (err) {
+                alert('Не удалось скопировать. Вы можете скопировать адрес из строки браузера!');
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showCopiedStatus(button) {
+            button.innerText = translations[currentLang].copiedBtn;
+            setTimeout(() => {
+                button.innerText = translations[currentLang].shareBtn;
+            }, 2000);
+        }
+
+        // Функция принудительного скачивания QR-кода в формате PNG
         function downloadQR() {
             const qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/";
             
-            // Скачиваем картинку через fetch, чтобы обойти CORS ограничения
             fetch(qrUrl)
                 .then(response => response.blob())
                 .then(blob => {
-                    // Создаем временную ссылку для скачивания в памяти браузера
                     const blobUrl = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.style.display = 'none';
                     a.href = blobUrl;
-                    a.download = 'yerevan-toilet-codes-qr.png'; // Имя скачиваемого файла
+                    a.download = 'yerevan-toilet-codes-qr.png';
                     document.body.appendChild(a);
-                    a.click(); // Симулируем клик по ссылке
+                    a.click();
                     
-                    // Удаляем временные элементы
                     window.URL.revokeObjectURL(blobUrl);
                     document.body.removeChild(a);
                 })
@@ -563,7 +613,7 @@
             renderPlaces(getFilteredPlaces());
         });
 
-        // Железобетонная отправка формы без перезагрузки страницы
+        // Отправка формы без перезагрузки страницы
         function sendFormData(e) {
             e.preventDefault(); 
             
@@ -602,7 +652,7 @@
             });
         }
 
-        // Самый первый запуск отображения данных
+        // Самый первый запуск отображения данных при загрузке страницы
         renderPlaces(places);
     </script>
 </body>
