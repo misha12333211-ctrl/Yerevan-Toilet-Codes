@@ -1,11 +1,10 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yerevan Toilet Codes 🚽🇦🇲</title>
     
-    <!-- Подключаем стильные шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
@@ -240,28 +239,23 @@
 </head>
 <body>
 
-    <!-- Переключатель языков -->
     <div class="lang-switcher">
         <button class="lang-btn active" onclick="setLanguage('ru')">RU</button>
         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
         <button class="lang-btn" onclick="setLanguage('am')">AM</button>
     </div>
 
-    <!-- Заголовок -->
     <header>
         <h1 id="main-title">Yerevan <span>Codes</span> 🚽</h1>
         <p class="subtitle" id="main-subtitle">Народная база рабочих кодов от туалетов в центре города. Проверено гуляющими.</p>
     </header>
 
-    <!-- Поиск -->
     <div class="search-wrapper">
         <input type="text" id="search" placeholder="Поиск по названию или улице...">
     </div>
 
-    <!-- Контейнер для карточек -->
     <div id="places-list"></div>
 
-    <!-- Форма отправки (FormSubmit) настроена на твой email -->
     <div class="form-box">
         <h2 id="form-title">Знаешь код? Поделись!</h2>
         <p id="form-desc">Нашел новый код или заметил, что старый изменился? Напиши сюда, регистрация не нужна. Я обновлю сайт в течение дня.</p>
@@ -279,9 +273,12 @@
             </div>
             <button type="submit" class="submit-btn" id="submit-btn">Отправить код автору</button>
         </form>
+
+        <div id="form-success" style="display: none; color: var(--accent-green); font-weight: bold; text-align: center; margin-top: 15px; font-size: 14px;">
+            🎉 Спасибо! Код успешно отправлен автору.
+        </div>
     </div>
 
-    <!-- Донаты -->
     <div class="donate-box" id="donate-text">
         Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦
     </div>
@@ -301,6 +298,10 @@
                 inputAddress: "Например: Амиряна или Северный проспект",
                 inputCode: "Например: 4921# или Спросить на барной стойке",
                 submitBtn: "Отправить код автору",
+                sendingBtn: "Отправка...",
+                successMsg: "🎉 Спасибо! Код успешно отправлен автору.",
+                errorMsg: "Ошибка при отправке. Попробуйте еще раз.",
+                networkError: "Ошибка сети. Проверьте интернет.",
                 donate: "Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦",
                 noResults: "Пока кодов от этого места нет 🔍 Попробуй другое!"
             },
@@ -314,6 +315,10 @@
                 inputAddress: "e.g., Amiryan St or Northern Avenue",
                 inputCode: "e.g., 4921# or Ask at the counter",
                 submitBtn: "Submit code to author",
+                sendingBtn: "Sending...",
+                successMsg: "🎉 Thank you! The code has been successfully sent to the author.",
+                errorMsg: "Error sending code. Please try again.",
+                networkError: "Network error. Please check your internet connection.",
                 donate: "This project is built and maintained by a 14-year-old aspiring developer in Yerevan. If this site saved your walk, you can support the author for ice cream via Idram (wallet number coming soon) 🍦",
                 noResults: "No codes for this place yet 🔍 Try another!"
             },
@@ -327,13 +332,17 @@
                 inputAddress: "Օրինակ՝ Ամիրյան փողոց կամ Հյուսիսային պողոտա",
                 inputCode: "Օրինակ՝ 4921# կամ Հարցնել բարմենին",
                 submitBtn: "Ուղարկել կոդը հեղինակին",
+                sendingBtn: "Ուղարկվում է...",
+                successMsg: "🎉 Շնորհակալություն: Կոդը հաջողությամբ ուղարկվեց հեղինակին:",
+                errorMsg: "Սխալ՝ ուղարկելու ընթացքում: Կրկին փորձեք:",
+                networkError: "Ցանցային սխալ: Ստուգեք Ձեր կապը:",
                 donate: "Նախագիծը ստեղծել և թարմացնում է Երևանում բնակվող 14-ամյա սկսնակ ծրագրավորողը։ Եթե կայքը փրկեց Ձեր զբոսանքը, կարող եք աջակցել հեղինակին պաղպաղակի համար Idram-ի միջոցով (դրամապանակի համարը շուտով) 🍦",
                 noResults: "Այս վայրի համար դեռ կոդեր չկան 🔍 Փորձեք մեկ ուրիշը"
             }
         };
 
         // ТВОЯ БАЗА ДАННЫХ.
-        // Замени первый объект на то самое место, от которого ты знаешь код!
+        // Отредактируй первый элемент, вставив тот единственный код, который ты знаешь.
         const places = [
             { 
                 name: "KFC (Амирян)", 
@@ -418,6 +427,46 @@
         // Слушатель ввода для живого поиска
         searchInput.addEventListener('input', () => {
             renderPlaces(getFilteredPlaces());
+        });
+
+        // Отправка формы без перезагрузки страницы (AJAX / Fetch)
+        document.getElementById('code-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Останавливаем стандартную перезагрузку страницы
+            
+            const form = this;
+            const button = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('form-success');
+            
+            button.disabled = true;
+            button.innerText = translations[currentLang].sendingBtn;
+            successMessage.style.display = 'none';
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.reset(); // Очищаем форму
+                    successMessage.innerText = translations[currentLang].successMsg;
+                    successMessage.style.display = 'block'; // Показываем сообщение
+                    button.innerText = translations[currentLang].submitBtn;
+                    button.disabled = false;
+                    
+                    // Прячем сообщение через 5 секунд
+                    setTimeout(() => { successMessage.style.display = 'none'; }, 5000);
+                } else {
+                    alert(translations[currentLang].errorMsg);
+                    button.innerText = translations[currentLang].submitBtn;
+                    button.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert(translations[currentLang].networkError);
+                button.innerText = translations[currentLang].submitBtn;
+                button.disabled = false;
+            });
         });
 
         // Самый первый запуск отображения данных
