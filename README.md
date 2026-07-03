@@ -28,7 +28,7 @@
 ## 🎒 Об авторе
 Мне **14 лет**, я живу в Ереване и учусь веб-разработке. Это мой первый полезный проект, созданный для реальных людей. 
 
-Если проект помог вам во время прогулки по розовому городу, вы можете поддержать автора на мороженое через **Idram** (номер кошелька указан в футере сайта).
+Если проект помог вам во время прогулки по городу, вы можете поддержать автора на мороженое через **Idram** (номер кошелька указан в футере сайта).
 
 ---
 
@@ -64,7 +64,7 @@ A crowdsourced web service designed to help residents and tourists in Yerevan qu
 ## 🎒 About the Author
 I am **14 years old**, living in Yerevan, and learning web development. This is my very first practical project created to solve a real-world problem for real people.
 
-If this project saved your walk around the Pink City, you can support me for ice cream via **Idram** (wallet number will be added to the footer soon) 🍦
+If this project saved your walk around the City, you can support me for ice cream via **Idram** (wallet number will be added to the footer soon) 🍦
 
 ---
 
