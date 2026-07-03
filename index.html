@@ -15,6 +15,7 @@
             --main-dark: #1E1E24;
             --accent-orange: #FF6B35; /* Яркий цвет ереванского туфа */
             --accent-green: #00A86B;
+            --accent-blue: #3F51B5;
             --card-shadow: 6px 6px 0px #1E1E24; /* Контрастные тени */
         }
 
@@ -225,6 +226,73 @@
             box-shadow: 1px 1px 0px var(--main-dark);
         }
 
+        /* Блок QR-кода и Шаринга */
+        .share-box {
+            margin-top: 40px;
+            background: #EBF3FE;
+            width: 100%;
+            max-width: 480px;
+            padding: 24px;
+            border-radius: 18px;
+            border: 3px solid var(--main-dark);
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .share-box h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .share-box p {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .qr-container {
+            background: white;
+            padding: 12px;
+            border: 2px solid var(--main-dark);
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .qr-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .qr-container img {
+            display: block;
+            width: 150px;
+            height: 150px;
+        }
+
+        .share-btn {
+            background: white;
+            color: var(--main-dark);
+            border: 2px solid var(--main-dark);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px var(--main-dark);
+            transition: 0.1s;
+            font-family: inherit;
+        }
+
+        .share-btn:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px var(--main-dark);
+        }
+
         /* Футер */
         .donate-box { 
             margin: 40px 0; 
@@ -279,6 +347,18 @@
         </div>
     </div>
 
+    <div class="share-box">
+        <h2 id="share-title">Понравился проект? Поделись!</h2>
+        <p id="share-desc">Нажми на QR-код, чтобы скачать его в PNG, или скопируй ссылку ниже.</p>
+        
+        <div class="qr-container" title="Нажмите, чтобы скачать QR-код" onclick="downloadQR()">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/" alt="QR Code">
+        </div>
+        <div>
+            <button class="share-btn" id="share-btn" onclick="copyLink()">Скопировать ссылку</button>
+        </div>
+    </div>
+
     <div class="donate-box" id="donate-text">
         Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦
     </div>
@@ -302,6 +382,10 @@
                 successMsg: "🎉 Спасибо! Код успешно отправлен автору.",
                 errorMsg: "Ошибка при отправке. Попробуйте еще раз.",
                 networkError: "Ошибка сети. Проверьте интернет.",
+                shareTitle: "Понравился проект? Поделись!",
+                shareDesc: "Нажми на QR-код, чтобы скачать его в PNG, или скопируй ссылку ниже.",
+                shareBtn: "Скопировать ссылку",
+                copiedBtn: "Ссылка скопирована! 👍",
                 donate: "Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦",
                 noResults: "Пока кодов от этого места нет 🔍 Попробуй другое!"
             },
@@ -319,6 +403,10 @@
                 successMsg: "🎉 Thank you! The code has been successfully sent to the author.",
                 errorMsg: "Error sending code. Please try again.",
                 networkError: "Network error. Please check your internet connection.",
+                shareTitle: "Like the project? Share it!",
+                shareDesc: "Click on the QR code to download it as PNG, or copy the link below.",
+                shareBtn: "Copy Link",
+                copiedBtn: "Link copied! 👍",
                 donate: "This project is built and maintained by a 14-year-old aspiring developer in Yerevan. If this site saved your walk, you can support the author for ice cream via Idram (wallet number coming soon) 🍦",
                 noResults: "No codes for this place yet 🔍 Try another!"
             },
@@ -336,12 +424,16 @@
                 successMsg: "🎉 Շնորհակալություն: Կոդը հաջողությամբ ուղարկվեց հեղինակին:",
                 errorMsg: "Սխալ՝ ուղարկելու ընթացքում: Կրկին փորձեք:",
                 networkError: "Ցանցային սխալ: Ստուգեք Ձեր կապը:",
-                donate: "Նախագիծը ստեղծել և թարմացնում է Երևանում բնակվող 14-ամյա սկսնակ ծրագրավորողը։ Եթե կայքը փրկեց Ձեր զբոսանքը, կարող եք աջակցել հեղինակին պաղպաղակի համար Idram-ի միջոցով (դրամապանակի համարը շուտով) 🍦",
-                noResults: "Այս վայրի համար դեռ կոդեր չկան 🔍 Փորձեք մեկ ուրիշը"
+                shareTitle: "Հավանեցի՞ք նախագիծը: Կիսվեք:",
+                shareDesc: "Սեղմեք QR կոդի վրա՝ այն PNG ձևաչափով ներբեռնելու համար, կամ պատճենեք հղումը ստորև:",
+                shareBtn: "Պատճենել հղումը",
+                copiedBtn: "Հղումը պատճենված է բուֆերում: 👍",
+                donate: "Նախագիծը ստեղծել և թարմացնում է Երևանում բնակվող 14-ամյա սկսնակ ծրագրավորողը։ Եթե կայքը փրկեց Ձեր զբոսանքը, կարող եք աջակցել հեղինակին պաղպաղակի համար Idram-ի միջոցով (դրամապանակի համարը աջակցության համար շուտով) 🍦",
+                noResults: "Այս վայրի համար դեռ կոդեր չկան 🔍 Փորձեք մեկ ուրիшем"
             }
         };
 
-        // ТВОЯ БАЗА ДАННЫХ.
+        // ТВОЯ БАЗА ДАННЫХ
         const places = [
             { 
                 name: "KFC (Амирян)", 
@@ -385,6 +477,11 @@
             document.getElementById('input-code').placeholder = translations[lang].inputCode;
             document.getElementById('submit-btn').innerText = translations[lang].submitBtn;
             document.getElementById('donate-text').innerText = translations[lang].donate;
+            
+            // Новые переводы для блока шаринга
+            document.getElementById('share-title').innerText = translations[lang].shareTitle;
+            document.getElementById('share-desc').innerText = translations[lang].shareDesc;
+            document.getElementById('share-btn').innerText = translations[lang].shareBtn;
 
             renderPlaces(getFilteredPlaces());
         }
@@ -425,6 +522,42 @@
             });
         }
 
+        // Функция копирования правильной ссылки в буфер обмена
+        function copyLink() {
+            const siteUrl = "https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/";
+            navigator.clipboard.writeText(siteUrl).then(() => {
+                const shareBtn = document.getElementById('share-btn');
+                shareBtn.innerText = translations[currentLang].copiedBtn;
+                setTimeout(() => {
+                    shareBtn.innerText = translations[currentLang].shareBtn;
+                }, 2000);
+            });
+        }
+
+        // Функция принудительного скачивания QR-кода в PNG
+        function downloadQR() {
+            const qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/";
+            
+            // Скачиваем картинку через fetch, чтобы обойти CORS ограничения
+            fetch(qrUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    // Создаем временную ссылку для скачивания в памяти браузера
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = blobUrl;
+                    a.download = 'yerevan-toilet-codes-qr.png'; // Имя скачиваемого файла
+                    document.body.appendChild(a);
+                    a.click(); // Симулируем клик по ссылке
+                    
+                    // Удаляем временные элементы
+                    window.URL.revokeObjectURL(blobUrl);
+                    document.body.removeChild(a);
+                })
+                .catch(() => alert('Не удалось скачать QR-код. Попробуйте сделать скриншот!'));
+        }
+
         // Слушатель ввода для живого поиска
         searchInput.addEventListener('input', () => {
             renderPlaces(getFilteredPlaces());
@@ -432,7 +565,7 @@
 
         // Железобетонная отправка формы без перезагрузки страницы
         function sendFormData(e) {
-            e.preventDefault(); // Намертво блокируем переход на страницу FormSubmit
+            e.preventDefault(); 
             
             const form = document.getElementById('code-form');
             const button = document.getElementById('submit-btn');
@@ -449,13 +582,12 @@
             })
             .then(response => {
                 if (response.ok) {
-                    form.reset(); // Очищаем поля формы
+                    form.reset(); 
                     successMessage.innerText = translations[currentLang].successMsg;
-                    successMessage.style.display = 'block'; // Показываем сообщение об успехе
+                    successMessage.style.display = 'block'; 
                     button.innerText = translations[currentLang].submitBtn;
                     button.disabled = false;
                     
-                    // Прячем сообщение через 5 секунд
                     setTimeout(() => { successMessage.style.display = 'none'; }, 5000);
                 } else {
                     alert(translations[currentLang].errorMsg);
@@ -470,7 +602,7 @@
             });
         }
 
-        // Самый первый запуск отображения данных.
+        // Самый первый запуск отображения данных
         renderPlaces(places);
     </script>
 </body>
