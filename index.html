@@ -302,7 +302,7 @@
             color: #666; 
             font-weight: 500; 
             line-height: 1.5; 
-            white-space: pre-line; /* Чтобы перенос строк \n работал красиво */
+            white-space: pre-line; 
         }
     </style>
 </head>
@@ -316,7 +316,7 @@
 
     <header>
         <h1 id="main-title">Yerevan <span>Codes</span> 🚽</h1>
-        <p class="subtitle" id="main-subtitle">Народная база рабочих кодов от туалетов в центре города. Проверено гуляющими.</p>
+        <p class="subtitle" id="main-subtitle">База рабочих кодов от туалетов в Ереване. Проверено гуляющими.</p>
     </header>
 
     <div class="search-wrapper">
@@ -394,7 +394,7 @@
             },
             en: {
                 title: "Yerevan <span>Codes</span> 🚽",
-                subtitle: "Crowdsourced database of working toilet codes in the city center. Verified by walkers.",
+                subtitle: "Crowdsourced database of working toilet codes in Yerevan. Verified by walkers.",
                 searchPlaceholder: "Search by cafe name or street...",
                 formTitle: "Know a code? Share it!",
                 formDesc: "Found a new code or noticed an old one changed? Submit it here, no registration needed. I'll update the site daily.",
@@ -415,7 +415,7 @@
             },
             am: {
                 title: "Yerevan <span>Codes</span> 🚽",
-                subtitle: "Քաղաքի կենտրոնում գտնվող զուգարանների աշխատող կոդերի ժողովրդական բազա։ Ստուգված է զբոսնողների կոնցից։",
+                subtitle: "Երևանում զուգարանների մուտքի ծածկագրերի տվյալների բազա՝ ստեղծված օգտատերերի կողմից և ստուգված հետիոտների կողմից։",
                 searchPlaceholder: "Փնտրել ըստ անվանման կամ փողոցի...",
                 formTitle: "Գիտե՞ս կոդը։ Կիսվիր։",
                 formDesc: "Գտե՞լ ես նոր կոդ կամ նկատել ես, որ հինը փոխվել է։ Գրիր այստեղ, ցրանցում պետք չէ։ Ես կթարմացնեմ կայքը օրվա ընթացքում։",
@@ -436,7 +436,7 @@
             }
         };
 
-        // ТВОЯ БАЗА ДАННЫХ (С ПОЛНОЙ МУЛЬТИЯЗЫЧНОСТЬЮ НАЗВАНИЙ И АДРЕСОВ)
+       
         const places = [
             
             { 
@@ -446,7 +446,7 @@
                 addressRu: "пр. Комитаса, 24/6",
                 addressEn: "24/6 Komitas Ave",
                 addressAm: "Կոմիտասի պողոտա, 24/6",
-                code: "Спросить на барной стойке", 
+                code: "8888#", 
                 dateRu: "Обновлено сегодня",
                 dateEn: "Updated today",
                 dateAm: "Թարմացվել է այսօր",
@@ -457,7 +457,7 @@
         const listContainer = document.getElementById('places-list');
         const searchInput = document.getElementById('search');
 
-        // Функция изменения языка интерфейса
+        
         function setLanguage(lang) {
             currentLang = lang;
             
@@ -484,7 +484,7 @@
             renderPlaces(getFilteredPlaces());
         }
 
-        // Логика умного мультиязычного поиска (ищет сразу по всем языковым полям названий и адресов)
+       
         function getFilteredPlaces() {
             const text = searchInput.value.toLowerCase().trim();
             return places.filter(place => 
@@ -494,6 +494,10 @@
                 place.addressRu.toLowerCase().includes(text) ||
                 place.addressEn.toLowerCase().includes(text) ||
                 place.addressAm.toLowerCase().includes(text) ||
+                place.code.toLowerCase().includes(text) || 
+                place.dateRu.toLowerCase().includes(text) || 
+                place.dateEn.toLowerCase().includes(text) || 
+                place.dateAm.toLowerCase().includes(text) || 
                 (place.searchKeywords && place.searchKeywords.toLowerCase().includes(text))
             );
         }
