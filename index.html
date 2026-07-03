@@ -521,12 +521,12 @@
                 
                 // Переключаем в зависимости от выбранного языка
                 if(currentLang === 'en') {
-                    currentName = place.nameEn || place.nameRu; // если английского имени нет, берем русское
+                    currentName = place.nameEn || place.nameRu; 
                     currentAddress = place.addressEn;
                     dateStr = place.dateEn;
                 }
                 if(currentLang === 'am') {
-                    currentName = place.nameAm || place.nameRu; // если армянского имени нет, берем русское
+                    currentName = place.nameAm || place.nameRu; 
                     currentAddress = place.addressAm;
                     dateStr = place.dateAm;
                 }
@@ -541,7 +541,7 @@
             });
         }
 
-        // Улучшенная функция копирования ссылки с резервным способом для локального открытия file:// 
+      
         function copyLink() {
             const siteUrl = "https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/";
             const shareBtn = document.getElementById('share-btn');
@@ -579,7 +579,7 @@
             }, 2000);
         }
 
-        // Функция скачивания QR-кода в формате PNG
+        // Функция скачивания кода
         function downloadQR() {
             const qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://misha12333211-ctrl.github.io/Yerevan-Toilet-Codes/";
             
@@ -600,12 +600,12 @@
                 .catch(() => alert('Не удалось скачать QR-код. Попробуйте сделать скриншот!'));
         }
 
-        // Слушатель ввода для живого поиска
+     
         searchInput.addEventListener('input', () => {
             renderPlaces(getFilteredPlaces());
         });
 
-        // Отправка формы без перезагрузки страницы
+      
         function sendFormData(e) {
             e.preventDefault(); 
             
@@ -644,7 +644,6 @@
             });
         }
 
-        // Самый первый запуск отображения данных при загрузке страницы
         renderPlaces(places);
     </script>
 </body>
