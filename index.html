@@ -260,7 +260,7 @@
         <h2 id="form-title">Знаешь код? Поделись!</h2>
         <p id="form-desc">Нашел новый код или заметил, что старый изменился? Напиши сюда, регистрация не нужна. Я обновлю сайт в течение дня.</p>
         
-        <form action="https://formsubmit.co/stasaleskin80@gmail.com" method="POST" id="code-form">
+        <form action="https://formsubmit.co/stasaleskin80@gmail.com" method="POST" id="code-form" onsubmit="sendFormData(event)">
             <input type="hidden" name="_captcha" value="false">
             <div class="form-group">
                 <input type="text" name="Cafe Name" id="input-name" placeholder="Например: KFC или Lumen Coffee" required>
@@ -342,7 +342,6 @@
         };
 
         // ТВОЯ БАЗА ДАННЫХ.
-        // Отредактируй первый элемент, вставив тот единственный код, который ты знаешь.
         const places = [
             { 
                 name: "KFC (Амирян)", 
@@ -372,7 +371,9 @@
             currentLang = lang;
             
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
 
             document.getElementById('main-title').innerHTML = translations[lang].title;
             document.getElementById('main-subtitle').innerText = translations[lang].subtitle;
@@ -429,11 +430,11 @@
             renderPlaces(getFilteredPlaces());
         });
 
-        // Отправка формы без перезагрузки страницы (AJAX / Fetch)
-        document.getElementById('code-form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Останавливаем стандартную перезагрузку страницы
+        // Железобетонная отправка формы без перезагрузки страницы
+        function sendFormData(e) {
+            e.preventDefault(); // Намертво блокируем переход на страницу FormSubmit
             
-            const form = this;
+            const form = document.getElementById('code-form');
             const button = document.getElementById('submit-btn');
             const successMessage = document.getElementById('form-success');
             
@@ -448,9 +449,9 @@
             })
             .then(response => {
                 if (response.ok) {
-                    form.reset(); // Очищаем форму
+                    form.reset(); // Очищаем поля формы
                     successMessage.innerText = translations[currentLang].successMsg;
-                    successMessage.style.display = 'block'; // Показываем сообщение
+                    successMessage.style.display = 'block'; // Показываем сообщение об успехе
                     button.innerText = translations[currentLang].submitBtn;
                     button.disabled = false;
                     
@@ -467,7 +468,7 @@
                 button.innerText = translations[currentLang].submitBtn;
                 button.disabled = false;
             });
-        });
+        }
 
         // Самый первый запуск отображения данных
         renderPlaces(places);
