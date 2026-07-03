@@ -35,4 +35,39 @@
 ## 🤝 Как помочь проекту?
 Если вы знаете рабочий код, которого еще нет на сайте:
 1. Зайдите на сайт и отправьте его через форму внизу страницы.
-2. Или создайте Pull Request с обновлением массива `places` в файле `index.html`. 
+
+
+# 🚽 Yerevan Codes (Yerevan Toilet Codes) 🇦🇲
+
+> **Live website:** [YOUR_LINK_HERE]
+
+A crowdsourced web service designed to help residents and tourists in Yerevan quickly find door codes for toilets in cafes and fast-food chains across the city center. No more awkward situations or unnecessary purchases just for a receipt!
+
+---
+
+## ✨ Features
+* **⚡️ Live Search:** Instant filtering by venue name or street using vanilla JavaScript.
+* **🎨 Neo-Brutalist Design:** A vibrant, modern interface optimized for mobile viewports (since people search for codes on the go).
+* **🌐 Trilingual Support (i18n):** Fully localized interface in **Russian, English, and Armenian** to serve the diverse population of Yerevan.
+* **📩 Serverless Data Collection:** Users can submit new codes directly to the author's email using `FormSubmit` — completely free, with no backend, database, or registration required.
+* **🔋 100% Free & Open Source:** Built with zero budget and hosted for free on GitHub Pages.
+
+---
+
+## 🛠 Tech Stack
+* **HTML5** — semantic markup.
+* **CSS3** — custom fonts (`Unbounded`, `Plus Jakarta Sans`), responsive layouts, and UI variables.
+* **Vanilla JavaScript** — in-memory data filtering, language switching logic, and DOM manipulation.
+
+---
+
+## 🎒 About the Author
+I am **14 years old**, living in Yerevan, and learning web development. This is my very first practical project created to solve a real-world problem for real people.
+
+If this project saved your walk around the Pink City, you can support me for ice cream via **Idram** (wallet number will be added to the footer soon) 🍦
+
+---
+
+## 🤝 How to Contribute
+If you know a working toilet code that is missing:
+1. Use the submission form at the bottom of the live website.
