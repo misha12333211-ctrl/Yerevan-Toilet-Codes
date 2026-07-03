@@ -1,0 +1,427 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yerevan Toilet Codes 🚽🇦🇲</title>
+    
+    <!-- Подключаем стильные шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FAF9F5; /* Приятный кремовый фон */
+            --main-dark: #1E1E24;
+            --accent-orange: #FF6B35; /* Яркий цвет ереванского туфа */
+            --accent-green: #00A86B;
+            --card-shadow: 6px 6px 0px #1E1E24; /* Контрастные тени */
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0;
+        }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--main-dark); 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        
+        /* Кнопки переключения языков */
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-self: flex-end;
+            max-width: 480px;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: 2px solid var(--main-dark);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 2px 2px 0px var(--main-dark);
+            transition: 0.1s;
+        }
+        
+        .lang-btn.active {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        header { 
+            text-align: center; 
+            margin: 20px 0 30px 0; 
+            max-width: 500px; 
+        }
+
+        h1 { 
+            font-family: 'Unbounded', sans-serif; 
+            font-size: 26px; 
+            line-height: 1.2; 
+            margin-bottom: 12px; 
+            text-transform: uppercase; 
+        }
+        
+        h1 span { 
+            background: var(--accent-orange); 
+            color: white; 
+            padding: 2px 8px; 
+            display: inline-block; 
+            transform: rotate(-2px); 
+        }
+
+        p.subtitle { 
+            font-size: 14px; 
+            color: #555; 
+            line-height: 1.5; 
+        }
+
+        /* Поле поиска */
+        .search-wrapper { 
+            width: 100%; 
+            max-width: 480px; 
+            margin-bottom: 30px; 
+        }
+
+        #search { 
+            width: 100%; 
+            padding: 18px; 
+            border: 3px solid var(--main-dark); 
+            border-radius: 16px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            outline: none; 
+            background: white; 
+            box-shadow: 4px 4px 0px var(--main-dark); 
+            transition: 0.2s; 
+        }
+        
+        #search:focus { 
+            transform: translate(-2px, -2px); 
+            box-shadow: 6px 6px 0px var(--accent-orange); 
+        }
+
+        /* Список заведений */
+        #places-list { 
+            width: 100%; 
+            max-width: 480px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+        }
+
+        .card { 
+            background: white; 
+            padding: 24px; 
+            border-radius: 18px; 
+            border: 3px solid var(--main-dark); 
+            box-shadow: var(--card-shadow); 
+        }
+        
+        .card h3 { 
+            font-family: 'Unbounded', sans-serif; 
+            font-size: 18px; 
+            margin-bottom: 6px; 
+        }
+        
+        .card .address { 
+            font-size: 13px; 
+            color: #666; 
+            margin-bottom: 16px; 
+            font-weight: 500; 
+        }
+        
+        /* Блок с кодом */
+        .code-box { 
+            background: #FFF3EE; 
+            color: var(--accent-orange); 
+            padding: 14px; 
+            border-radius: 12px; 
+            font-size: 24px; 
+            font-family: 'Unbounded', sans-serif; 
+            font-weight: 700; 
+            text-align: center; 
+            border: 2px dashed var(--accent-orange); 
+        }
+        
+        .date { 
+            font-size: 11px; 
+            color: #888; 
+            text-align: right; 
+            margin-top: 14px; 
+            font-weight: 600; 
+        }
+        
+        /* Форма отправки */
+        .form-box { 
+            margin-top: 40px; 
+            background: #E8F5E9; 
+            width: 100%; 
+            max-width: 480px; 
+            padding: 24px; 
+            border-radius: 18px; 
+            border: 3px solid var(--main-dark); 
+            box-shadow: var(--card-shadow); 
+        }
+        
+        .form-box h2 { 
+            font-family: 'Unbounded', sans-serif; 
+            font-size: 16px; 
+            color: var(--main-dark); 
+            margin-bottom: 8px; 
+        }
+        
+        .form-box p { 
+            font-size: 13px; 
+            color: #444; 
+            margin-bottom: 16px; 
+            line-height: 1.4; 
+        }
+        
+        .form-group { 
+            margin-bottom: 12px; 
+        }
+        
+        .form-group input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid var(--main-dark); 
+            border-radius: 10px; 
+            font-size: 14px; 
+            font-family: inherit;
+            outline: none;
+        }
+        
+        .submit-btn { 
+            width: 100%; 
+            background: var(--accent-green); 
+            color: white; 
+            border: 2px solid var(--main-dark); 
+            padding: 14px; 
+            border-radius: 10px; 
+            font-size: 15px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            box-shadow: 3px 3px 0px var(--main-dark); 
+            transition: 0.1s; 
+        }
+        
+        .submit-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px var(--main-dark);
+        }
+
+        /* Футер */
+        .donate-box { 
+            margin: 40px 0; 
+            text-align: center; 
+            max-width: 480px; 
+            font-size: 13px; 
+            color: #666; 
+            font-weight: 500; 
+            line-height: 1.5; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Переключатель языков -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLanguage('ru')">RU</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('am')">AM</button>
+    </div>
+
+    <!-- Заголовок -->
+    <header>
+        <h1 id="main-title">Yerevan <span>Codes</span> 🚽</h1>
+        <p class="subtitle" id="main-subtitle">Народная база рабочих кодов от туалетов в центре города. Проверено гуляющими.</p>
+    </header>
+
+    <!-- Поиск -->
+    <div class="search-wrapper">
+        <input type="text" id="search" placeholder="Поиск по названию или улице...">
+    </div>
+
+    <!-- Контейнер для карточек -->
+    <div id="places-list"></div>
+
+    <!-- Форма отправки (FormSubmit) настроена на твой email -->
+    <div class="form-box">
+        <h2 id="form-title">Знаешь код? Поделись!</h2>
+        <p id="form-desc">Нашел новый код или заметил, что старый изменился? Напиши сюда, регистрация не нужна. Я обновлю сайт в течение дня.</p>
+        
+        <form action="https://formsubmit.co/stasaleskin80@gmail.com" method="POST" id="code-form">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="form-group">
+                <input type="text" name="Cafe Name" id="input-name" placeholder="Например: KFC или Lumen Coffee" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="Address" id="input-address" placeholder="Например: Амиряна или Северный проспект" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="Code" id="input-code" placeholder="Например: 4921# или Спросить на барной стойке" required>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">Отправить код автору</button>
+        </form>
+    </div>
+
+    <!-- Донаты -->
+    <div class="donate-box" id="donate-text">
+        Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦
+    </div>
+
+    <script>
+        let currentLang = 'ru';
+
+        // Переводы текстов интерфейса
+        const translations = {
+            ru: {
+                title: "Yerevan <span>Codes</span> 🚽",
+                subtitle: "Народная база рабочих кодов от туалетов в центре города. Проверено гуляющими.",
+                searchPlaceholder: "Поиск по названию или улице...",
+                formTitle: "Знаешь код? Поделись!",
+                formDesc: "Нашел новый код или заметил, что старый изменился? Напиши сюда, регистрация не нужна. Я обновлю сайт в течение дня.",
+                inputName: "Например: KFC или Lumen Coffee",
+                inputAddress: "Например: Амиряна или Северный проспект",
+                inputCode: "Например: 4921# или Спросить на барной стойке",
+                submitBtn: "Отправить код автору",
+                donate: "Проект создал и обновляет 14-летний начинающий разработчик из Еревана. Если сайт спас твою прогулку, ты можешь закинуть автору на мороженое через Idram (номер кошелька появится тут чуть позже) 🍦",
+                noResults: "Пока кодов от этого места нет 🔍 Попробуй другое!"
+            },
+            en: {
+                title: "Yerevan <span>Codes</span> 🚽",
+                subtitle: "Crowdsourced database of working toilet codes in the city center. Verified by walkers.",
+                searchPlaceholder: "Search by cafe name or street...",
+                formTitle: "Know a code? Share it!",
+                formDesc: "Found a new code or noticed an old one changed? Submit it here, no registration needed. I'll update the site daily.",
+                inputName: "e.g., KFC or Lumen Coffee",
+                inputAddress: "e.g., Amiryan St or Northern Avenue",
+                inputCode: "e.g., 4921# or Ask at the counter",
+                submitBtn: "Submit code to author",
+                donate: "This project is built and maintained by a 14-year-old aspiring developer in Yerevan. If this site saved your walk, you can support the author for ice cream via Idram (wallet number coming soon) 🍦",
+                noResults: "No codes for this place yet 🔍 Try another!"
+            },
+            am: {
+                title: "Yerevan <span>Codes</span> 🚽",
+                subtitle: "Քաղաքի կենտրոնում գտնվող զուգարանների աշխատող կոդերի ժողովրդական բազա։ Ստուգված է զբոսնողների կողմից։",
+                searchPlaceholder: "Փնտրել ըստ անվանման կամ փողոցի...",
+                formTitle: "Գիտե՞ս կոդը։ Կիսվիր։",
+                formDesc: "Գտե՞լ ես նոր կոդ կամ նկատել ես, որ հինը փոխվել է։ Գրիր այստեղ, գրանցում պետք չէ։ Ես կթարմացնեմ կայքը օրվա ընթացքում։",
+                inputName: "Օրինակ՝ KFC կամ Lumen Coffee",
+                inputAddress: "Օրինակ՝ Ամիրյան փողոց կամ Հյուսիսային պողոտա",
+                inputCode: "Օրինակ՝ 4921# կամ Հարցնել բարմենին",
+                submitBtn: "Ուղարկել կոդը հեղինակին",
+                donate: "Նախագիծը ստեղծել և թարմացնում է Երևանում բնակվող 14-ամյա սկսնակ ծրագրավորողը։ Եթե կայքը փրկեց Ձեր զբոսանքը, կարող եք աջակցել հեղինակին պաղպաղակի համար Idram-ի միջոցով (դրամապանակի համարը շուտով) 🍦",
+                noResults: "Այս վայրի համար դեռ կոդեր չկան 🔍 Փորձեք մեկ ուրիշը"
+            }
+        };
+
+        // ТВОЯ БАЗА ДАННЫХ.
+        // Замени первый объект на то самое место, от которого ты знаешь код!
+        const places = [
+            { 
+                name: "KFC (Амирян)", 
+                address: "ул. Амиряна, 1 / Amiryan St, 1 / Ամիրյան փող., 1", 
+                code: "3845#", 
+                dateRu: "Обновлено сегодня",
+                dateEn: "Updated today",
+                dateAm: "Թարմացվել է այսօր",
+                searchKeywords: "kfc кфс амирян amiryan ամիրյան фастфуд fastfood центральный центр площадь"
+            },
+            { 
+                name: "То самое кафе", 
+                address: "Твоя любимая улица", 
+                code: "9999", 
+                dateRu: "Обновлено вчера",
+                dateEn: "Updated yesterday",
+                dateAm: "Թարմացվել է երեկ",
+                searchKeywords: "кафе кофейня street փողոց cafe"
+            }
+        ];
+
+        const listContainer = document.getElementById('places-list');
+        const searchInput = document.getElementById('search');
+
+        // Функция изменения языка интерфейса
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.getElementById('main-title').innerHTML = translations[lang].title;
+            document.getElementById('main-subtitle').innerText = translations[lang].subtitle;
+            searchInput.placeholder = translations[lang].searchPlaceholder;
+            document.getElementById('form-title').innerText = translations[lang].formTitle;
+            document.getElementById('form-desc').innerText = translations[lang].formDesc;
+            document.getElementById('input-name').placeholder = translations[lang].inputName;
+            document.getElementById('input-address').placeholder = translations[lang].inputAddress;
+            document.getElementById('input-code').placeholder = translations[lang].inputCode;
+            document.getElementById('submit-btn').innerText = translations[lang].submitBtn;
+            document.getElementById('donate-text').innerText = translations[lang].donate;
+
+            renderPlaces(getFilteredPlaces());
+        }
+
+        // Логика умного мультиязычного поиска
+        function getFilteredPlaces() {
+            const text = searchInput.value.toLowerCase().trim();
+            return places.filter(place => 
+                place.name.toLowerCase().includes(text) || 
+                place.address.toLowerCase().includes(text) ||
+                (place.searchKeywords && place.searchKeywords.toLowerCase().includes(text))
+            );
+        }
+
+        // Вывод карточек на экран
+        function renderPlaces(filteredPlaces) {
+            listContainer.innerHTML = '';
+            if(filteredPlaces.length === 0) {
+                listContainer.innerHTML = `<p style="text-align:center; color:#666; font-weight:600; margin-top:20px;">${translations[currentLang].noResults}</p>`;
+                return;
+            }
+
+            filteredPlaces.forEach(place => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                let dateStr = place.dateRu;
+                if(currentLang === 'en') dateStr = place.dateEn;
+                if(currentLang === 'am') dateStr = place.dateAm;
+
+                card.innerHTML = `
+                    <h3>${place.name}</h3>
+                    <div class="address">📍 ${place.address}</div>
+                    <div class="code-box">${place.code}</div>
+                    <div class="date">⏳ ${dateStr}</div>
+                `;
+                listContainer.appendChild(card);
+            });
+        }
+
+        // Слушатель ввода для живого поиска
+        searchInput.addEventListener('input', () => {
+            renderPlaces(getFilteredPlaces());
+        });
+
+        // Самый первый запуск отображения данных
+        renderPlaces(places);
+    </script>
+</body>
+</html>
